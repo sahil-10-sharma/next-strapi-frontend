@@ -1,0 +1,17 @@
+{
+  "extends": ["next/babel","next/core-web-vitals", "mantine",
+  "plugin:@next/next/recommended"],
+  "plugins": [
+    "prettier",
+    "testing-library",
+  ], "overrides": [
+    {
+      "files": ["**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off"
+  }
+}

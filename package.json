@@ -1,0 +1,44 @@
+{
+  "name": "my-next-blog",
+  "version": "1.0.2",
+  "private": true,
+  "scripts": {
+    "develop": "next dev",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "next build && next export",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@mantine/carousel": "^5.0.2",
+    "@mantine/core": "^5.0.0",
+    "@mantine/ds": "^5.0.0",
+    "@mantine/hooks": "^5.0.0",
+    "@mantine/modals": "^5.0.0",
+    "@mantine/prism": "^5.0.0",
+    "@tabler/icons": "^1.78.1",
+    "cross-env": "^7.0.3",
+    "embla-carousel-autoplay": "^7.0.0",
+    "moment": "^2.24.0",
+    "next": "^12.2.3",
+    "qs": "^6.11.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.2",
+    "react-lines-ellipsis": "^0.15.2",
+    "react-markdown": "^8.0.3",
+    "react-moment": "^0.9.6",
+    "react-twitter-embed": "^4.0.4",
+    "remark-breaks": "^3.0.2"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1"
+  }
+}
