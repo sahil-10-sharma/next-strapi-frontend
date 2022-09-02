@@ -1101,10 +1101,10 @@
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.201.tgz"
   "version" "1.4.201"
 
-"embla-carousel-autoplay@^7.0.0":
-  "integrity" "sha512-9IzP+VOo+g4a6lBraV7Pz+qbKVjdcu826C4B5aZs5r5S5t8N0ydSMuXa4S3P8WK3Yra6DQRoDacd7qfna1R4hQ=="
-  "resolved" "https://registry.npmjs.org/embla-carousel-autoplay/-/embla-carousel-autoplay-7.0.0.tgz"
-  "version" "7.0.0"
+"embla-carousel-autoplay@^7.0.2":
+  "integrity" "sha512-QgrxinUHl1eQADo37clP3lUK5rTcMV4/sm9EzgxvwRz8FuKY/HL5sz6iIVjHoPqKc05frLjx+WVlcAJ141VOSA=="
+  "resolved" "https://registry.npmjs.org/embla-carousel-autoplay/-/embla-carousel-autoplay-7.0.2.tgz"
+  "version" "7.0.2"
 
 "embla-carousel-react@6.2.0":
   "integrity" "sha512-XshB7pmmhso/fzENefflWw5/N3HqCjO8H5CkzQxuCQqV9w+bvEaBkjUZ6fxfqLUMMSKFWIQvMD6uo9f8oKS+2g=="
@@ -1118,10 +1118,10 @@
   "resolved" "https://registry.npmjs.org/embla-carousel/-/embla-carousel-6.2.0.tgz"
   "version" "6.2.0"
 
-"embla-carousel@7.0.0":
-  "integrity" "sha512-vgyElJaBRTtzWROQuO9Qx/VlibzKdhwnuQ2Ldh5/7/jddrB4XTI6IQlgR5ZglRaXjH4nXjVtUSwWWZMEIZQLFQ=="
-  "resolved" "https://registry.npmjs.org/embla-carousel/-/embla-carousel-7.0.0.tgz"
-  "version" "7.0.0"
+"embla-carousel@7.0.2":
+  "integrity" "sha512-6SHKbLJRvcjunb0VT1Aw7YwK0Dw8ecqEa+ppT1j+kHGEg5I4WvUd8SjRkc1NAuQK0PTBD0d567UCmzEAngeAxw=="
+  "resolved" "https://registry.npmjs.org/embla-carousel/-/embla-carousel-7.0.2.tgz"
+  "version" "7.0.2"
 
 "emoji-regex@^8.0.0":
   "integrity" "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="
