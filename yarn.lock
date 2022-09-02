@@ -1106,17 +1106,12 @@
   "resolved" "https://registry.npmjs.org/embla-carousel-autoplay/-/embla-carousel-autoplay-7.0.2.tgz"
   "version" "7.0.2"
 
-"embla-carousel-react@6.2.0":
-  "integrity" "sha512-XshB7pmmhso/fzENefflWw5/N3HqCjO8H5CkzQxuCQqV9w+bvEaBkjUZ6fxfqLUMMSKFWIQvMD6uo9f8oKS+2g=="
-  "resolved" "https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-6.2.0.tgz"
-  "version" "6.2.0"
+"embla-carousel-react@^7.0.2", "embla-carousel-react@6.2.0":
+  "integrity" "sha512-x+/8SbytmhY5K7TrVaZ+NWpGfkI2NaOBgdEseExedwTAOW7MQDoo1lE0yEJz0RHwvTLFBupfbbgL/GxMlhWVHA=="
+  "resolved" "https://registry.npmjs.org/embla-carousel-react/-/embla-carousel-react-7.0.2.tgz"
+  "version" "7.0.2"
   dependencies:
-    "embla-carousel" "6.2.0"
-
-"embla-carousel@6.2.0":
-  "integrity" "sha512-dSNsiQ7nmSQJZgbYfZCLdzrnznHwpaAcdJFcMRKgm/pjH1doOgxmfsvlMy4VfO4J11hLz8jm/W8WxSSDqfuu4w=="
-  "resolved" "https://registry.npmjs.org/embla-carousel/-/embla-carousel-6.2.0.tgz"
-  "version" "6.2.0"
+    "embla-carousel" "7.0.2"
 
 "embla-carousel@7.0.2":
   "integrity" "sha512-6SHKbLJRvcjunb0VT1Aw7YwK0Dw8ecqEa+ppT1j+kHGEg5I4WvUd8SjRkc1NAuQK0PTBD0d567UCmzEAngeAxw=="
@@ -2597,7 +2592,7 @@
   dependencies:
     "scriptjs" "^2.5.9"
 
-"react@*", "react@^15.6.0 || ^16.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.x || 17.x || 18.x", "react@^17.0.0", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=0.14.9", "react@>=16", "react@>=16.8.0", "react@17.0.2":
+"react@*", "react@^15.6.0 || ^16.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.x || 17.x || 18.x", "react@^17.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=0.14.9", "react@>=16", "react@>=16.8.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
