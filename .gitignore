@@ -94,16 +94,9 @@ logs
 results
 node_modules
 .node_history
-<<<<<<< HEAD
 package-lock.json
 .next/
-=======
-<<<<<<< HEAD
-package-lock.json
-=======
 
->>>>>>> d9710610cad774857a7f856bd593bc1a98eeb13b
->>>>>>> 6d0a230d4da5d0cf1e93169b02f9f9b2084cf49b
 ############################
 # Tests
 ############################
