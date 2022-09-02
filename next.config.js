@@ -9,7 +9,8 @@ const nextConfig = {
   },
   images: {
     loader: "default",
-    domains: ["localhost","127.0.0.1"],
+    // domains: ["localhost","127.0.0.1"],
+    domains: ["https://next-strapi-backend.herokuapp.com"],
   },
 }
 

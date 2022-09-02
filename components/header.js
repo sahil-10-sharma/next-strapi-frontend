@@ -24,7 +24,7 @@ import {
   Switch,
   useMantineColorScheme,
 } from '@mantine/core';
-import { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react";
 import {
   IconBulb,
   IconUser,
@@ -295,8 +295,8 @@ const smallMockData = [
 ];
 
 
-const Heading = ({props}) => {
-
+const Heading = (props ) => {
+  var selectRef = React.useRef(null);
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState("")
   const [opened, { toggle }] = useDisclosure(false);
@@ -305,12 +305,12 @@ const Heading = ({props}) => {
   const [items, setItems] = useState()
   const [smallIcon, setSmallIcon] = useState()
   const [cat, setCat] = useState()
+  
   const {colorScheme, toggleColorScheme = function (value) {
     return setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
     }} = useMantineColorScheme();
 
-  const dark = colorScheme === 'dark';
-  
+
   useEffect(() => {
     const fetchCategoris = async () => {
       let res = await fetchAPI("/categories", {

@@ -113,7 +113,7 @@ const Article = ({ article, categories }) => {
     <>
     <div className={classes.main}>
     <div className={classes.mainSection}>
-    <Header categories={categories.data} />
+    
    
     <ScrollArea  className="uk-container uk-container-large">
     <Paper shadow="xs" className={classes.mainPaper}  p="md" >

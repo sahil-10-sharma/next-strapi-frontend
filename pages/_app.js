@@ -47,7 +47,7 @@ const MyApp = ({ Component, pageProps }) => {
       </Head> */}
       {/* <GlobalContext.Provider value={global.attributes}> */}
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-      <Header /> 
+      
       <MantineProvider theme={{ colorScheme,  
         shadows: {
             md: '1px 1px 3px rgba(0, 0, 0, .25)',
@@ -63,6 +63,7 @@ const MyApp = ({ Component, pageProps }) => {
        
         
         }} withNormalizeCSS>
+        <Header /> 
         <MyGlobalStyles />
         <Component {...pageProps} />
         </MantineProvider>
