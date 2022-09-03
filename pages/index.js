@@ -133,7 +133,7 @@ const Home = ( props) => {
   const rightArticles = props.articles.slice(0, leftArticlesCount)
   const { classes } = useStyles();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
- console.log(props.articles)
+//  console.log(props.articles)
   // useEffect(() => {
   //   if(colorScheme === 'dark'){
   //     document.getElementById('__next').style.backgroundColor = "#1A1B1E"

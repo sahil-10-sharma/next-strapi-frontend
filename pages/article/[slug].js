@@ -106,7 +106,7 @@ const Article = ({ article, categories }) => {
     }else {
       document.getElementById('__next').style.backgroundColor = "black"
     }
-    console.log(article.attributes)
+    // console.log(article.attributes)
   })
 
   return (

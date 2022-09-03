@@ -93,7 +93,7 @@ const log = console.log.bind(console);
     const [useEllipsis, setUseEllipsis] = useState(true);
     const { classes } = useStyles();
 
-    console.log(article.attributes.image.data.attributes)
+    // console.log(article.attributes.image.data.attributes)
 
    return (
     <> 

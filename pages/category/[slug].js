@@ -25,7 +25,7 @@ const Category = ({ category, categories }) => {
     metaTitle: category.attributes.name,
     metaDescription: `All ${category.attributes.name} articles`,
   }
-console.log(categories)
+// console.log(categories)
   return (
     <>
     <Header categories={categories} />
