@@ -81,10 +81,6 @@ const CarouselCard = ({categories}) => {
   const cat = categories.map((item) => {
       return (item.attributes)
   })
-  // console.log(cat.map((item) => {
-  //   {return item.image}
-  // }))
-  // console.log(data)
 
   return (
     <Carousel
@@ -103,7 +99,7 @@ const CarouselCard = ({categories}) => {
               shadow="md"
               p="xl"
               radius="md"
-              sx={{ backgroundImage: `url(${item.image.data?.attributes?.name})` }}
+              sx={{ backgroundImage: `url(${item.image.data.attributes.url})` }}
               className={classes.card}
             >
               <div>
