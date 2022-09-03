@@ -94,8 +94,8 @@ const log = console.log.bind(console);
     const { classes } = useStyles();
 
    return (
-    <>  
-    <Link href={`/article/${article.attributes.slug}`}>
+    <> 
+        <Link href={`/article/${article.attributes.slug}`}>
     <Card ref={ref} withBorder radius="md" p={0} className={classes.card}>
       <Group noWrap spacing={0} >
         <div className={classes.body} style={{width:"100%"}}>
@@ -150,7 +150,7 @@ const log = console.log.bind(console);
           <Image  width={150}
                   height={150}
                   className={classes.vCardImage} 
-                  src={article.attributes.image.data.attributes.name} />
+                  src={article.attributes.image.data.attributes.url} />
         </Grid.Col>
       </Grid>
         </div>

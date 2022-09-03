@@ -32,7 +32,8 @@
     "react-markdown": "^8.0.3",
     "react-moment": "^0.9.6",
     "react-twitter-embed": "^4.0.4",
-    "remark-breaks": "^3.0.2"
+    "remark-breaks": "^3.0.2",
+    "strapi-plugin-local-image-sharp": "^1.2.0"
   },
   "license": "MIT",
   "devDependencies": {

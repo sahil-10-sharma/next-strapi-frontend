@@ -119,14 +119,14 @@ const Article = ({ article, categories }) => {
     <Paper shadow="xs" className={classes.mainPaper}  p="md" >
       <Text className={classes.articleTitle}>{article.attributes.title}</Text>
       <Image className={classes.articleImage} 
-                  height={300} src={article.attributes.image.data.attributes.name} />
+                  height={300} src={article.attributes.image.data.attributes.url} />
       <Text className={classes.articleContent}>
         
       <ReactMarkdown
         // eslint-disable-next-line react/no-children-prop
         children={
           article.attributes.content
-          ? article.attributes.contentj
+          ? article.attributes.content
           : ""
         }
         remarkPlugins={[remarkBreaks]}
@@ -179,20 +179,20 @@ const Article = ({ article, categories }) => {
   )
 }
 
-export async function getStaticPaths() {
-  const articlesRes = await fetchAPI("/articles", { fields: ["slug"] })
+// export async function getStaticPaths() {
+//   const articlesRes = await fetchAPI("/articles", { fields: ["slug"] })
 
-  return {
-    paths: articlesRes.data.map((article) => ({
-      params: {
-        slug: article.attributes.slug,
-      },
-    })),
-    fallback: false,
-  }
-}
+//   return {
+//     paths: articlesRes.data.map((article) => ({
+//       params: {
+//         slug: article.attributes.slug,
+//       },
+//     })),
+//     fallback: false,
+//   }
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const articlesRes = await fetchAPI("/articles", {
     filters: {
       slug: params.slug,
@@ -202,8 +202,11 @@ export async function getStaticProps({ params }) {
   const categoriesRes = await fetchAPI("/categories")
 
   return {
-    props: { article: articlesRes.data[0], categories: categoriesRes },
-    revalidate: 1,
+    props: { 
+      article: articlesRes.data[0], 
+      categories: categoriesRes 
+    },
+    // revalidate: 1,
   }
 }
 

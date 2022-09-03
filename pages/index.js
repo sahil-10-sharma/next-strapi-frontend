@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react";
 import Layout from "../components/layout"
 import Twitter from "../components/twitter"
 import CarouselCard from "../components/CarouselCard"
@@ -91,89 +91,12 @@ const Header = dynamic(() =>
 import("../components/header.js")
 );
 
-const Home = ({ articles, categories, homepage }) => {
-  const leftArticlesCount = Math.ceil(articles.length / 5)
-  const leftArticles =  articles.slice(leftArticlesCount, articles.length)
-  const rightArticles = articles.slice(0, leftArticlesCount)
-  const { classes } = useStyles();
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
- 
-  // useEffect(() => {
-  //   if(colorScheme === 'dark'){
-  //     document.getElementById('__next').style.backgroundColor = "#1A1B1E"
-  //     document.getElementById('__next').style.borderRadius = "0px"
-  //   }else {
-  //     document.getElementById('__next').style.backgroundColor = "black"
-  //   }
-
-  // })
-
-  return (
-    <>
-    <div className={classes.main}>
-    {/* <Header categories={categories} /> */}
-    <Seo seo={homepage.attributes.seo} />
-      <div className={classes.mainSection}>
-
-      <ScrollArea  className="uk-container uk-container-large">
-          <Container my="lg" style={{minWidth:"100%", padding:"0px!important"}}>
-            <Grid>
-              <Grid.Col xs={9}>
-                <CarouselCard categories={articles} />
-                <h1 className={classes.title}>Latest Posts</h1>
-                {leftArticles.map((article, i) => {
-                  return (
-                    <Card1
-                      article={article}
-                      articles={articles}
-                    />
-                  )
-                })}
-              </Grid.Col>
-              <Grid.Col xs={0.1} style={{display:"flex", justifyContent:"center"}}>
-                <div className="vl"></div>
-              </Grid.Col>
-              <Grid.Col xs={2.8}>
-                <Paper height={200} mt={6} radius="sm" />
-                  <div style={{height:"100%"}}>
-                  <div className="badges">
-                    <Grid grow>
-                        {categories.map((item) => {
-                            {return <Grid.Col span={3}><Badge className={classes.badge}>{item.attributes.name}</Badge></Grid.Col>
-                               }
-                          })}
-                    </Grid>
-                  </div>
-                <Card withBorder radius="md" className={classes.card}>
-                  <Group position="apart">
-                    <Text className={classes.titlesmall}>Services</Text>
-                    <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
-                      + 21 other services
-                    </Anchor>
-                  </Group>
-                  <SimpleGrid cols={3} mt="md">
-                    <CategoryCard categories={categories}/>
-                  </SimpleGrid>
-                </Card>
-                    {/* twitter */}
-                  <Twitter style={{position:"sticky", top:"80px", width:"100%", padding:"0px  "}} />
-                  </div>
-                </Grid.Col>          
-            </Grid>
-          </Container>
-        </ScrollArea>
-      </div>
-    </div>
-     
-     </>
-  )
-}
-
-
-export async function getStaticProps({params}) {
+export async function getServerSideProps({params}) {
   // Run API calls in parallel
   const [articlesRes, homepageRes] = await Promise.all([
     fetchAPI("/articles", { populate: "*" }),
+
+
     // fetchAPI("/categories", { populate: "*" }),
     fetchAPI("/homepage", {
       populate: {
@@ -192,9 +115,6 @@ export async function getStaticProps({params}) {
     },
   })
   const allCategories = await fetchAPI("/categories")
-
-
-
   return {
     props: {
       articles: articlesRes.data,
@@ -203,12 +123,89 @@ export async function getStaticProps({params}) {
       category: matchingCategories.data[0],
       categories: allCategories.data,
     },
-    
-    revalidate: 1,
-  }
-
- 
-  
+    // revalidate: 1,
+  } 
 }
+
+const Home = ( props) => {
+  const leftArticlesCount = Math.ceil(props.articles.length / 5)
+  const leftArticles =  props.articles.slice(leftArticlesCount, props.articles.length)
+  const rightArticles = props.articles.slice(0, leftArticlesCount)
+  const { classes } = useStyles();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+ console.log(props.articles)
+  // useEffect(() => {
+  //   if(colorScheme === 'dark'){
+  //     document.getElementById('__next').style.backgroundColor = "#1A1B1E"
+  //     document.getElementById('__next').style.borderRadius = "0px"
+  //   }else {
+  //     document.getElementById('__next').style.backgroundColor = "black"
+  //   }
+
+  // })
+
+  return (
+    <>
+    <div className={classes.main}>
+    {/* <Header categories={categories} /> */}
+    <Seo seo={props.homepage.attributes.seo} />
+      <div className={classes.mainSection}>
+
+      <ScrollArea  className="uk-container uk-container-large">
+          <Container my="lg" style={{minWidth:"100%", padding:"0px!important"}}>
+            <Grid>
+              <Grid.Col xs={9}>
+                <CarouselCard categories={props.articles} />
+                <h1 className={classes.title}>Latest Posts</h1>
+                {leftArticles.map((article, i) => {
+                  return (
+                    <Card1
+                      article={article}
+                      articles={props.articles}
+                    />
+                  )
+                })}
+              </Grid.Col>
+              <Grid.Col xs={0.1} style={{display:"flex", justifyContent:"center"}}>
+                <div className="vl"></div>
+              </Grid.Col>
+              <Grid.Col xs={2.8}>
+                <Paper height={200} mt={6} radius="sm" />
+                  <div style={{height:"100%"}}>
+                  <div className="badges">
+                    <Grid grow>
+                        {props.categories.map((item) => {
+                            {return <Grid.Col span={3}><Badge className={classes.badge}>{item.attributes.name}</Badge></Grid.Col>
+                               }
+                          })}
+                    </Grid>
+                  </div>
+                <Card withBorder radius="md" className={classes.card}>
+                  <Group position="apart">
+                    <Text className={classes.titlesmall}>Services</Text>
+                    <Anchor size="xs" color="dimmed" sx={{ lineHeight: 1 }}>
+                      + 21 other services
+                    </Anchor>
+                  </Group>
+                  <SimpleGrid cols={3} mt="md">
+                    <CategoryCard categories={props.categories}/>
+                  </SimpleGrid>
+                </Card>
+                    {/* twitter */}
+                  <Twitter style={{position:"sticky", top:"80px", width:"100%", padding:"0px  "}} />
+                  </div>
+                </Grid.Col>          
+            </Grid>
+          </Container>
+        </ScrollArea>
+      </div>
+    </div>
+     
+     </>
+  )
+}
+
+
+
 
 export default Home
