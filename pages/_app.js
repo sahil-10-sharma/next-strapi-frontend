@@ -1,7 +1,7 @@
 import App from "next/app"
 import Head from "next/head"
 import "../assets/css/style.css"
-import { createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 import { fetchAPI } from "../lib/api"
 import dynamic from "next/dynamic";
 import { getStrapiMedia } from "../lib/media"
@@ -10,6 +10,7 @@ import {IconSun, IconMoonStars} from '@tabler/icons'
 import { MantineProvider, ColorSchemeProvider, Global, ColorScheme, ActionIcon, Switch } from '@mantine/core';
 // Store Strapi Global object in context
 export const GlobalContext = createContext({})
+
 const Header = dynamic(() => 
 import("../components/header")
 );
@@ -21,30 +22,42 @@ const MyApp = ({ Component, pageProps }) => {
   const { global } = pageProps
   const [colorScheme, setColorScheme] = useState('light');
   
+  useEffect(() => {
+    if(colorScheme === 'dark'){
+      document.getElementById('__next').style.backgroundColor = "#1A1B1E"
+      document.getElementById('__next').style.borderRadius = "0px"
+    }else {
+      document.getElementById('__next').style.backgroundColor = "black"
+    }
+
+  })
+
   const toggleColorScheme = function (value) {
     return setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
     };
 
-    function MyGlobalStyles() {
-      return (
-        <Global
-          styles={(theme) => ({
-            body: {
-              backgroundColor : colorScheme === 'dark' ? "#1A1B1E": "black",
-                  },
-          })}
-        />
+  function MyGlobalStyles() {
+    return (
+      <Global
+        styles={(theme) => ({
+          body: {
+            backgroundColor : colorScheme === 'dark' ? "#1A1B1E": "black",
+                },
+        })}
+      />
       );
-      }
-  return (
-    <>
-   
-      {/* <Head>
+  }
+  if (typeof window === 'undefined') {
+    return <></>;
+  } else {
+    return (
+      <>
+      <Head>
         <link
           rel="shortcut icon" 
           href={getStrapiMedia(global.attributes.favicon)}
         />
-      </Head> */}
+      </Head>
       {/* <GlobalContext.Provider value={global.attributes}> */}
       <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       
@@ -72,6 +85,7 @@ const MyApp = ({ Component, pageProps }) => {
     </>
   )
 }
+}
 
 // getInitialProps disables automatic static optimization for pages that don't
 // have getStaticProps. So article, category and home pages still get SSG.
@@ -90,6 +104,7 @@ MyApp.getInitialProps = async (ctx) => {
     },
   })
   // Pass the data to our page via props
+  console.log(globalRes)
   return { ...appProps, pageProps: { global: globalRes.data } }
 }
 

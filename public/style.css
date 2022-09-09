@@ -124,9 +124,18 @@ body{
 .uk-container-large{
 
     padding: 0px!important;
-    margin-top: 55px;
+    margin-top: 0px;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 91%;
+}
+.uk-container-large-cat{
+
+    padding: 0px!important;
+    margin-top: 0px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
 }
 .badges .mantine-Badge-root{
 	width: 100%;

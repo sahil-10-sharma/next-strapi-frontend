@@ -127,7 +127,7 @@ const log = console.log.bind(console);
           <Text className={classes.title} mt="xs" mb="md">
             {article.attributes.title}
           </Text>
-          <p className={classes.content}>
+          <div className={classes.content}>
             <ReactMarkdown
               // eslint-disable-next-line react/no-children-prop
               children={
@@ -142,7 +142,7 @@ const log = console.log.bind(console);
             />
             
             <a href={`/article/${article.attributes.slug}`}>Read More</a>
-          </p>
+          </div>
           </Text>
            
         </Grid.Col>

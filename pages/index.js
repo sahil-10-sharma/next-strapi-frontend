@@ -134,15 +134,7 @@ const Home = ( props) => {
   const { classes } = useStyles();
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
 //  console.log(props.articles)
-  // useEffect(() => {
-  //   if(colorScheme === 'dark'){
-  //     document.getElementById('__next').style.backgroundColor = "#1A1B1E"
-  //     document.getElementById('__next').style.borderRadius = "0px"
-  //   }else {
-  //     document.getElementById('__next').style.backgroundColor = "black"
-  //   }
 
-  // })
 
   return (
     <>
@@ -152,7 +144,7 @@ const Home = ( props) => {
       <div className={classes.mainSection}>
 
       <ScrollArea  className="uk-container uk-container-large">
-          <Container my="lg" style={{minWidth:"100%", padding:"0px!important"}}>
+          <Container my="lg" style={{minWidth:"100%", padding:"0px!important", paddingTop:"30px"}}>
             <Grid>
               <Grid.Col xs={9}>
                 <CarouselCard categories={props.articles} />

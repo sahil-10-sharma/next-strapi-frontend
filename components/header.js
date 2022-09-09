@@ -253,7 +253,7 @@ const useStyles = createStyles((theme) => ({
     borderBottom:"0px",
     marginLeft:"0px 15px 0px 15px",
     position:"sticky", 
-    top:"0px",
+    top:"-1px",
     left:"15px",
     borderBottom: "0px"
   },

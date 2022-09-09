@@ -7,6 +7,9 @@ const nextConfig = {
     options: {
       name: '/public/icons/[name].[ext]'
   },
+  compiler: {
+    styledComponents: true,
+  },
   generateBuildId: async () => {
     // You can, for example, get the latest git commit hash here
     return "" + new Date().getTime();
@@ -22,8 +25,8 @@ const nextConfig = {
     // domains: ["localhost","127.0.0.1"],
     domains: [
       "https://next-strapi-backend.herokuapp.com",
-      "res.cloudinary.com",
-      "https://res.cloudinary.com/doe98qzoi/image/upload"
+      "res.cloudinary.com","localhost","127.0.0.1"
+      // "https://res.cloudinary.com/doe98qzoi/image/upload/v1662484286"
       ],
   },
 }
