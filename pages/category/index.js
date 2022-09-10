@@ -115,9 +115,7 @@ export async function getStaticProps({ params }) {
 export default function Index(props) {
     const { classes } = useStyles();
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-useEffect(() => {
-console.log(props.categories)
-})
+
 
 return (
     <div className={classes.main}>
@@ -145,7 +143,7 @@ return (
             </Grid.Col>          
             </Grid>
           </Container>
-        </ScrollArea>
+       </ScrollArea>
       </div>
     </div>
 )

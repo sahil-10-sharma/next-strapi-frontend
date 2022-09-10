@@ -1,7 +1,7 @@
 import App from "next/app"
 import Head from "next/head"
 import "../assets/css/style.css"
-import { createContext, useState, useEffect } from "react"
+import React, { createContext, useState, useEffect } from "react"
 import { fetchAPI } from "../lib/api"
 import dynamic from "next/dynamic";
 import { getStrapiMedia } from "../lib/media"
@@ -31,6 +31,16 @@ const MyApp = ({ Component, pageProps }) => {
     }
 
   })
+
+  // Hydration Fix
+  const [hasMounted, setHasMounted] = React.useState(false);
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
+  // Hydration Fix
 
   const toggleColorScheme = function (value) {
     return setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
